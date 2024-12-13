@@ -20,8 +20,8 @@ const MyApplications = () => {
     try {
       const endpoint =
         user && user.role === "Employer"
-          ? "http://localhost:4000/api/v1/application/employer/getall"
-          : "http://localhost:4000/api/v1/application/jobseeker/getall";
+          ? "https://carriercraft-1.onrender.com/api/v1/application/employer/getall"
+          : "https://carriercraft-1.onrender.com/api/v1/application/jobseeker/getall";
 
       axios
         .get(endpoint, { withCredentials: true })
@@ -38,9 +38,12 @@ const MyApplications = () => {
   const deleteApplication = (id) => {
     try {
       axios
-        .delete(`http://localhost:4000/api/v1/application/delete/${id}`, {
-          withCredentials: true,
-        })
+        .delete(
+          `https://carriercraft-1.onrender.com/api/v1/application/delete/${id}`,
+          {
+            withCredentials: true,
+          }
+        )
         .then((res) => {
           toast.success(res.data.message);
           setApplications((prev) =>

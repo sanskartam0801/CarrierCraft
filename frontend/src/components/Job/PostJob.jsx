@@ -55,7 +55,7 @@ const PostJob = () => {
             };
 
       const res = await axios.post(
-        "http://localhost:4000/api/v1/job/post",
+        "https://carriercraft-1.onrender.com/api/v1/job/post",
         payload,
         {
           withCredentials: true,
